@@ -1,0 +1,43 @@
+Pcom - Tema 3 Client Web. Comunicaţie cu REST API
+Andrei Gabriel - 323CB
+
+Pentru rezolvarea acestei teme m-am folosit de scheletul de laborator
+cu numarul 10. Cerintele temei au fost rezolvate in fisierul client.c,
+care simuleaza comportamentul clientului, comenzile fiind preluate din consola.
+Pentru parsarea obiectelor json, m-am folosit de fisierele parson.c si parson.h
+pentru a usura parsarea informatiilor despre user si carti in json.
+
+client:
+
+In bucla while se trateaza toate comenzile pe care le putem da din consola, pana 
+la intalnirea functiei de exit.
+
+- register:
+Voi prelua informatiile despre utilizator (nume, parola), parsandu-le in format json 
+si voi trimite catre server (POST) obiectul json corespunzator cu functia de register. 
+Serverul imi poate returna eroarea de nume existent.
+
+- login:
+Asemanator cu register, voi trimite catre server obiectul cu functia de login, voi actualiza
+cookie-ul si voi trata eroarea care poate aparea (Wrong password).
+
+- logout:
+Daca clientul este logat trimitem server-ului cererea de delogare.
+
+- enter_library:
+Trimitem catre server cererea de a intra in librarie daca suntem deja logati si nu 
+suntem deja in librarie si se verifica token-ul.
+Urmatoarele functii se vor efectua daca sunt in librarie.
+
+- get_book:
+Se citeste id-ul, se formeaza ruta corespunzatoare si se afizaza cartea respectiva daca s-a gasit.
+
+- get_books:
+Se vor afisa toate cartile de la ruta corespunzatoare.
+
+- add_book:
+Preluam toate datele despre cartea pe care vreau sa o creez, verificam daca formatul este valid 
+si trimit server-ului json-ul format.
+
+- delete_book:
+Asemanator ca la get_book.
